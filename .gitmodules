@@ -1,0 +1,3 @@
+[submodule "vim-colorscheme-hybrid"]
+	path = vim-colorscheme-hybrid
+	url = https://github.com/w0ng/vim-hybrid.git
