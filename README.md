@@ -1,6 +1,6 @@
 # My Common Settings
 A library for personal favorite settings to set my linux/macOS devices up more easily.<br>
-Base directory for this settings is the home directory for the user would use this library.<br>
+Base directory for this settings is the home directory of the user who would use this library.<br>
 
 ## Usage
 1. Clone the repository.
