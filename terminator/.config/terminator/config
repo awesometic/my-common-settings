@@ -1,24 +1,40 @@
 [global_config]
-	tab_position = top
-	handle_size = 0
-	focus = system
+  focus = system
+  handle_size = 0
 [keybindings]
-[profiles]
-	[[default]]
-		scrollbar_position = hidden
-		use_system_font = False
-        font = Dejavu Sans Mono 14
-		background_darkness = 0.9
-		background_type = transparent
-		background_image = None
-		show_titlebar = False
+  close_term = <Primary>w
+  go_down = <Alt><Super>Down
+  go_left = <Alt><Super>Left
+  go_right = <Alt><Super>Right
+  go_up = <Alt><Super>Up
+  new_tab = <Primary>t
+  split_horiz = <Shift><Alt>d
+  split_vert = <Alt>d
+  switch_to_tab_1 = <Alt>1
+  switch_to_tab_10 = None
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_5 = <Alt>5
+  switch_to_tab_6 = <Alt>6
+  switch_to_tab_7 = <Alt>7
+  switch_to_tab_8 = <Alt>8
+  switch_to_tab_9 = <Alt>9
 [layouts]
-	[[default]]
-		[[[child1]]]
-		type = Terminal
-		parent = window0
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
     [[[window0]]]
-		type = Window
-		parent = ""
-		size = 1000, 600
+      parent = ""
+      size = 1000, 600
+      type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Dejavu Sans Mono 12
+    scrollbar_position = hidden
+    show_titlebar = False
