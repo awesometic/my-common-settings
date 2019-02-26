@@ -40,3 +40,4 @@
     font = Dejavu Sans Mono 12
     scrollbar_position = hidden
     show_titlebar = False
+	scrollback_infinite = True
