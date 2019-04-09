@@ -1,4 +1,4 @@
-set hlsearch
+set nohlsearch
 set nu
 set autoindent
 set scrolloff=2
