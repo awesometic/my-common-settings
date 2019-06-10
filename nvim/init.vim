@@ -1,3 +1,17 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'w0rp/ale'
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+call plug#end()
+
 set nohlsearch
 set nu
 set autoindent

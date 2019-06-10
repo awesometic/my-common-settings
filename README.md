@@ -5,13 +5,10 @@ Base directory for this settings is the home directory of the user who would use
 ## Usage
 1. Clone the repository.
 ```bash
-git clone https://github.com/awesometic/my_common_settings.git
-cd my_common_settings
-git submodule init
-git submodule update
+git clone --recursive https://github.com/awesometic/my_common_settings.git && cd my_common_settings
 ```
-2. And copy the settings you need to some appropriate directory.
+
+2. And install preferences by using the `install.sh` script.
 ```bash
-# e.g.
-cp -rL --remove-destination nvim/. ~/
+sudo source ./install.sh
 ```
