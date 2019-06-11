@@ -17,7 +17,14 @@ echo_msg() {
 
 echo_msg "Install useful packages..."
 sudo apt install neovim terminator tmux git htop iotop iftop shellcheck \
+    curl zsh zsh-complitions \
 	build-essential python3 python3-dev python3-pip python3-setuptools
+
+echo_msg "Install shell preference using 'Oh My Zsh'..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+cp -f zsh/.zshrc ~/.zshrc
 
 echo_msg "Install neovim preference..."
 cp -rL --remove-destination nvim/* ~/.config/nvim/
