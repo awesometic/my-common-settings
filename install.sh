@@ -41,5 +41,12 @@ cp terminator/* ~/.config/terminator/config
 echo_msg "Install mouse sensitivity autostart entry..."
 cp -f mouse/mouse.desktop ~/.config/autostart/
 
+echo_msg "Configure global git configuration..."
+git config --global user.name "Yang Deokgyu"
+git config --global user.email "secugyu@gmail.com"
+git config --global user.username "awesometic"
+git config --global core.editor "nvim"
+git config --global color.ui "auto"
+
 echo_msg "Done! Reboot your system to apply changes."
 
