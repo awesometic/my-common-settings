@@ -16,7 +16,8 @@ echo_msg() {
 }
 
 echo_msg "Install useful packages..."
-sudo apt install neovim terminator
+sudo apt install neovim terminator tmux git htop iotop iftop shellcheck \
+	build-essential python3 python3-dev python3-pip python3-setuptools
 
 echo_msg "Install neovim preference..."
 cp -rL --remove-destination nvim/* ~/.config/nvim/
