@@ -2,18 +2,17 @@
   focus = system
   handle_size = 0
 [keybindings]
-  close_term = <Primary>w
+  new_tab = <Primary>t
+  go_up = <Alt><Super>Up
   go_down = <Alt><Super>Down
   go_left = <Alt><Super>Left
   go_right = <Alt><Super>Right
-  go_up = <Alt><Super>Up
-  new_tab = <Primary>t
-  page_down = Page_Down
-  page_up = Page_Up
   split_horiz = <Shift><Alt>d
   split_vert = <Alt>d
+  close_term = <Primary>w
+  page_up = Page_Up
+  page_down = Page_Down
   switch_to_tab_1 = <Primary>1
-  switch_to_tab_10 = <Primary>0
   switch_to_tab_2 = <Primary>2
   switch_to_tab_3 = <Primary>3
   switch_to_tab_4 = <Primary>4
@@ -22,6 +21,20 @@
   switch_to_tab_7 = <Primary>7
   switch_to_tab_8 = <Primary>8
   switch_to_tab_9 = <Primary>9
+  switch_to_tab_10 = <Primary>0
+[profiles]
+  [[default]]
+    background_darkness = 0.9
+    background_type = transparent
+    font = Dejavu Sans Mono 12
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#2a2e33:#b84d51:#b3bf5a:#e4b55e:#6e90b0:#a17eac:#7fbfb4:#b5b9b6:#1d1f22:#8d2e32:#798431:#e58a50:#4b6b88:#6e5079:#4d7b74:#5a626a"
+    background_color = "#161719"
+    cursor_color = "#b7bcba"
+    foreground_color = "#b7bcba"
+    background_image = None
 [layouts]
   [[default]]
     [[[child1]]]
@@ -32,12 +45,3 @@
       size = 1000, 600
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    background_darkness = 0.9
-    background_type = transparent
-    cursor_color = "#aaaaaa"
-    font = Dejavu Sans Mono 12
-    scrollbar_position = hidden
-    show_titlebar = False
-	scrollback_infinite = True
