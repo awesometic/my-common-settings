@@ -1,16 +1,15 @@
 call plug#begin('~/.vim/plugged')
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
+Plug 'terryma/vim-multiple-cursors'
 Plug 'w0rp/ale'
-
 Plug 'airblade/vim-gitgutter'
-
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
-
 call plug#end()
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='hybrid'
 
 set nohlsearch
 set nu
