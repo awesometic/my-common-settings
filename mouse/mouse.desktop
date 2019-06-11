@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Decrease mouse sensitivity
+Exec=xset m 1/2 8
+Type=Application
+Comment[en_US]=Use xset to set mouse params
+Comment=Use xset to set mouse params

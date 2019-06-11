@@ -38,3 +38,8 @@ nvim +PlugInstall +qall
 echo_msg "Install terminator preference..."
 cp terminator/* ~/.config/terminator/config
 
+echo_msg "Install mouse sensitivity autostart entry..."
+cp -f mouse/mouse.desktop ~/.config/autostart/
+
+echo_msg "Done! Reboot your system to apply changes."
+
