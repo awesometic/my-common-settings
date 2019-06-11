@@ -24,7 +24,7 @@ echo_msg "Install shell preference using 'Oh My Zsh'..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-cp -f zsh/.zshrc ~/.zshrc
+cp -f zsh/.zshrc ~/
 
 echo_msg "Install neovim preference..."
 cp -rL --remove-destination nvim/* ~/.config/nvim/
