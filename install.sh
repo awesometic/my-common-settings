@@ -17,16 +17,19 @@ echo_msg() {
 
 echo_msg "Install useful packages..."
 sudo apt install neovim terminator tmux git htop iotop iftop shellcheck \
-    curl zsh zsh-complitions \
-	build-essential python3 python3-dev python3-pip python3-setuptools
+    curl wget zsh build-essential python3 python3-dev python3-pip python3-setuptools
 
 echo_msg "Install shell preference using 'Oh My Zsh'..."
+export RUNZSH=no
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 cp -f zsh/.zshrc ~/
 
 echo_msg "Install neovim preference..."
+if [ ! -d ~/.config/nvim ]; then
+    mkdir ~/.config/nvim
+fi
 cp -rL --remove-destination nvim/* ~/.config/nvim/
 
 echo_msg "Install vim-plug..."
@@ -36,7 +39,11 @@ echo_msg "Execute PlugInstall command to install plugins..."
 nvim +PlugInstall +qall
 
 echo_msg "Install terminator preference..."
+if [ ! -d ~/.config/terminator ]; then
+    mkdir ~/.config/terminator
+fi
 cp terminator/* ~/.config/terminator/config
+gsettings set org.gnome.desktop.default-applications.terminal exec '/usr/bin/terminator'
 
 echo_msg "Install mouse sensitivity autostart entry..."
 cp -f mouse/mouse.desktop ~/.config/autostart/
