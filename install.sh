@@ -55,5 +55,6 @@ git config --global user.username "awesometic"
 git config --global core.editor "nvim"
 git config --global color.ui "auto"
 
+echo_msg "You should set your system up using gnome-tweaks to your liking."
 echo_msg "Done! Reboot your system to apply changes."
 
