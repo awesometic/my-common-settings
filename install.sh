@@ -16,7 +16,7 @@ echo_msg() {
 }
 
 echo_msg "Install useful packages..."
-sudo apt install neovim terminator tmux git htop iotop iftop shellcheck \
+sudo apt install neovim terminator tmux git htop iotop iftop gnome-tweaks shellcheck \
     curl wget zsh build-essential python3 python3-dev python3-pip python3-setuptools
 
 echo_msg "Install shell preference using 'Oh My Zsh'..."
@@ -47,6 +47,9 @@ gsettings set org.gnome.desktop.default-applications.terminal exec '/usr/bin/ter
 
 echo_msg "Install mouse sensitivity autostart entry..."
 cp -f mouse/mouse.desktop ~/.config/autostart/
+
+echo_msg "Optimize docker to enable minimize click action..."
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
 echo_msg "Configure global git configuration..."
 git config --global user.name "Yang Deokgyu"
