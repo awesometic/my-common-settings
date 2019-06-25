@@ -13,6 +13,11 @@ call plug#end()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='hybrid'
 
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\.git$\|public$\|log$\|tmp$\|vendor$',
+	\ 'file': '\v\.(exe|so|dll)$'
+\ }
+
 set nohlsearch
 set nu
 set autoindent
