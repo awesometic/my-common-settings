@@ -12,11 +12,14 @@ call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='hybrid'
-
 let g:ctrlp_custom_ignore = {
 	\ 'dir':  '\.git$\|public$\|log$\|tmp$\|vendor$',
 	\ 'file': '\v\.(exe|so|dll)$'
 \ }
+
+let g:NERDTreeMapActivateNode="<F3>"
+let g:NERDTreeMapPreview="<F4>"
+silent! map <F2> :NERDTreeToggle<CR>
 
 set nohlsearch
 set nu
