@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Start imwheel to increase mouse wheel speed
+Exec=imwheel --kill
+Type=Application
+Comment[en_US]=Start imwheel to take effect
+Comment=Start imwheel to take effect
+
