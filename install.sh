@@ -48,7 +48,7 @@ gsettings set org.gnome.desktop.default-applications.terminal exec '/usr/bin/ter
 echo_msg "Install mouse sensitivity autostart entry..."
 cp -f mouse/mouse.desktop ~/.config/autostart/
 
-echo_msg "Install imwheel configuration..."
+echo_msg "Install imwheel configuration to optimize scrolling speed and to enable side buttons..."
 cp -f imwheel/.imwheelrc ~/
 cp -f imwheel/imwheel.desktop ~/.config/autostart/
 imwheel --kill
