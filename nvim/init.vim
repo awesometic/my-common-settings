@@ -34,7 +34,6 @@ set autoread
 set cindent
 set bs=eol,start,indent
 set history=256
-set paste
 set shiftwidth=4
 set showmatch
 set smartcase
