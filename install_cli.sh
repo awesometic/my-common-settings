@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ "$OSTYPE" != "linux-gnu" ]]; then
+if [[ ! "$OSTYPE" == *"linux-gnu"* ]]; then
     echo 'You cannot install to non-Linux operating system.'
 fi
 
