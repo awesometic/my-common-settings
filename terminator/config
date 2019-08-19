@@ -33,6 +33,7 @@
     scrollbar_position = hidden
     scrollback_infinite = True
     palette = "#2a2e33:#b84d51:#b3bf5a:#e4b55e:#6e90b0:#a17eac:#7fbfb4:#b5b9b6:#555753:#8d2e32:#798431:#e58a50:#4b6b88:#6e5079:#4d7b74:#5a626a"
+    use_system_font = False
 [layouts]
   [[default]]
     [[[child1]]]
