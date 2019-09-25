@@ -66,6 +66,8 @@ if [[ "$PACKAGES" == *"tmux"* ]]; then
     git clone https://github.com/gpakosz/.tmux.git /home/"$USER"/.oh-my-tmux/
     ln -s -f /home/"$USER"/.oh-my-tmux/.tmux.conf /home/"$USER"/
     cp /home/"$USER"/.oh-my-tmux/.tmux.conf.local /home/"$USER"/
+
+    patch -p0 /home/"$USER"/.tmux.conf.local < tmux/tmux.conf.local.patch 
 fi
 
 if [[ "$PACKAGES" == *"uim"* ]]; then

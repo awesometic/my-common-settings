@@ -1,0 +1,26 @@
+--- .tmux.conf.local	2019-09-26 00:35:30.251788925 +0900
++++ .tmux.conf.local	2019-09-26 00:32:57.588332421 +0900
+@@ -275,10 +275,10 @@
+ # this is the place to override or undo settings
+ 
+ # increase history size
+-#set -g history-limit 10000
++set -g history-limit 10000
+ 
+ # start with mouse mode enabled
+-#set -g mouse on
++set -g mouse on
+ 
+ # force Vi mode
+ #   really you should export VISUAL or EDITOR environment variable, see manual
+@@ -286,8 +286,8 @@
+ #set -g mode-keys vi
+ 
+ # replace C-b by C-a instead of using both prefixes
+-# set -gu prefix2
+-# unbind C-a
++set -gu prefix2
++unbind C-a
+ # unbind C-b
+ # set -g prefix C-a
+ # bind C-a send-prefix
