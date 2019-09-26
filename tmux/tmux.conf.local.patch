@@ -1,6 +1,14 @@
---- .tmux.conf.local	2019-09-26 00:35:30.251788925 +0900
-+++ .tmux.conf.local	2019-09-26 00:32:57.588332421 +0900
-@@ -275,10 +275,10 @@
+--- .tmux.conf.local	2019-09-26 10:10:46.558048212 +0900
++++ .tmux.conf.local	2019-09-26 10:31:40.787938121 +0900
+@@ -268,17 +268,17 @@
+ #   - false (default)
+ # on macOS, this requires installing reattach-to-user-namespace, see README.md
+ # on Linux, this requires xsel or xclip
+-tmux_conf_copy_to_os_clipboard=false
++tmux_conf_copy_to_os_clipboard=true
+ 
+ 
+ # -- user customizations -------------------------------------------------------
  # this is the place to override or undo settings
  
  # increase history size
@@ -13,7 +21,7 @@
  
  # force Vi mode
  #   really you should export VISUAL or EDITOR environment variable, see manual
-@@ -286,8 +286,8 @@
+@@ -286,11 +286,12 @@
  #set -g mode-keys vi
  
  # replace C-b by C-a instead of using both prefixes
@@ -24,3 +32,7 @@
  # unbind C-b
  # set -g prefix C-a
  # bind C-a send-prefix
+ 
+ # move status line to top
+ #set -g status-position top
++
