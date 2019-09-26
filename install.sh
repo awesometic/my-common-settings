@@ -21,8 +21,11 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
 
     DESKTOP=$(env | grep XDG_CURRENT_DESKTOP)
     [[ "${DESKTOP,,}" == *"pantheon" ]] && PACKAGES="$PACKAGES gnome-tweaks uim"
+
+    HOMEDIR="/home/$USER"
 elif [[ "$OSTYPE" == *"darwin"* ]]; then
-        PACKAGES="coreutils zsh neovim tmux git htop shellcheck python3 reattach-to-user-namespace"
+    PACKAGES="coreutils zsh neovim tmux git neofetch htop shellcheck ruby python3 reattach-to-user-namespace"
+    HOMEDIR="/Users/$USER"
 else
     msg "System is not recognized. The program will be closed."
     exit 0
@@ -33,16 +36,18 @@ msg "Install useful packages..."
 if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
     echo "$PACKAGES" | xargs sudo apt install -y
 else
-    echo "$PACKAGES" | xargs brew install -y
+    echo "$PACKAGES" | xargs brew install
 fi
 
 if [[ "$PACKAGES" == *"zsh"* ]]; then
     msg "Install shell preference using 'Oh My Zsh'..."
     export RUNZSH=no
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/"$USER"/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-    git clone https://github.com/zsh-users/zsh-autosuggestions /home/"$USER"/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOMEDIR"/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-autosuggestions "$HOMEDIR"/.oh-my-zsh/custom/plugins/zsh-autosuggestions
     cp -f zsh/.zshrc ~/
+
+    [[ "$OSTYPE" == *"darwin"* ]] && patch -p0 "$HOMEDIR"/.zshrc < zsh/zshrc_to_mac.patch
 fi
 
 if [[ "$PACKAGES" == *"neovim"* ]]; then
@@ -50,7 +55,7 @@ if [[ "$PACKAGES" == *"neovim"* ]]; then
     if [ ! -d ~/.config/nvim ]; then
         mkdir ~/.config/nvim
     fi
-    cp -rL --remove-destination nvim/* ~/.config/nvim/
+    cp -f nvim/* ~/.config/nvim/
 
     msg "Install vim-plug..."
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -63,11 +68,11 @@ if [[ "$PACKAGES" == *"tmux"* ]]; then
     [[ -n $(command -v nvim) ]] && export EDITOR=nvim
 
     msg "Install tmux preference using 'Oh My Tmux'..."
-    git clone https://github.com/gpakosz/.tmux.git /home/"$USER"/.oh-my-tmux/
-    ln -s -f /home/"$USER"/.oh-my-tmux/.tmux.conf /home/"$USER"/
-    cp /home/"$USER"/.oh-my-tmux/.tmux.conf.local /home/"$USER"/
+    git clone https://github.com/gpakosz/.tmux.git "$HOMEDIR"/.oh-my-tmux/
+    ln -s -f "$HOMEDIR"/.oh-my-tmux/.tmux.conf "$HOMEDIR"/
+    cp "$HOMEDIR"/.oh-my-tmux/.tmux.conf.local "$HOMEDIR"/
 
-    patch -p0 /home/"$USER"/.tmux.conf.local < tmux/tmux.conf.local.patch 
+    patch -p0 "$HOMEDIR"/.tmux.conf.local < tmux/tmux.conf.local.patch 
 fi
 
 if [[ "$PACKAGES" == *"uim"* ]]; then
