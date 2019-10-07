@@ -107,5 +107,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Use nvim as a default vi tool
 alias vi='nvim'
 alias vim='nvim'
+
+# Other aliases
+alias ls='ls --color=auto'
+

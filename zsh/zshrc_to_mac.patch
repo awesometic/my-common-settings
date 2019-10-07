@@ -1,5 +1,5 @@
---- .zshrc	2019-09-26 20:10:10.000000000 +0900
-+++ .zshrc	2019-09-26 20:10:17.000000000 +0900
+--- .zshrc	2019-10-07 19:51:27.000000000 +0900
++++ .zshrc	2019-10-07 19:52:24.000000000 +0900
 @@ -2,7 +2,7 @@
  # export PATH=$HOME/bin:/usr/local/bin:$PATH
  
@@ -9,3 +9,10 @@
  
  # Set name of the theme to load --- if set to "random", it will
  # load a random theme each time oh-my-zsh is loaded, in which case,
+@@ -115,3 +115,6 @@
+ # Other aliases
+ alias ls='ls --color=auto'
+ 
++# To use GNU coreutils
++PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
++
