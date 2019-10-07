@@ -24,6 +24,8 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
 
     HOMEDIR="/home/$USER"
 elif [[ "$OSTYPE" == *"darwin"* ]]; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
     PACKAGES="coreutils zsh neovim tmux git neofetch htop shellcheck ruby python3 reattach-to-user-namespace"
     HOMEDIR="/Users/$USER"
 else
