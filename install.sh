@@ -20,7 +20,11 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
     PACKAGES="zsh neovim tmux git htop iotop iftop inxi neofetch shellcheck curl wget build-essential software-properties-common apt-transport-https ca-certificates gnupg-agent gem bundler python3 python3-dev python3-pip python3-setuptools"
 
     DESKTOP=$(env | grep XDG_CURRENT_DESKTOP)
-    [[ "${DESKTOP,,}" == *"pantheon" ]] && PACKAGES="$PACKAGES gnome-tweaks uim"
+    if [[ "${DESKTOP,,}" == *"pantheon"* ]] || [[ "${DESKTOP,,}" == *"gnome"* ]]; then
+        PACKAGES="$PACKAGES gnome-tweaks"
+
+        gsettings set org.gnome.gedit.preferences.encodings candidate-encodings "['UTF-8', 'UHC', 'CURRENT', 'ISO-8859–15', 'EUC-KR', 'UTF-16']"
+    fi
 
     HOMEDIR="/home/$USER"
 elif [[ "$OSTYPE" == *"darwin"* ]]; then
