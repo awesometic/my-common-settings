@@ -58,10 +58,8 @@ fi
 
 if [[ "$PACKAGES" == *"neovim"* ]]; then
     msg "Install neovim preference..."
-    if [ ! -d ~/.config/nvim ]; then
-        mkdir ~/.config/nvim
-    fi
-    cp -f nvim/* ~/.config/nvim/
+    cp -rf nvim ~/.config
+    cp -f vim-colorscheme-hybrid/colors/hybrid.vim ~/.config/nvim/colors
 
     msg "Install vim-plug..."
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
