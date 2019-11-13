@@ -17,7 +17,7 @@ if [ "$EUID" -eq 0 ]; then
 fi
 
 if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
-    PACKAGES="zsh neovim tmux git htop iotop iftop inxi neofetch shellcheck curl wget build-essential software-properties-common apt-transport-https ca-certificates gnupg-agent gem bundler python3 python3-dev python3-pip python3-setuptools"
+    PACKAGES="zsh neovim tmux git htop iotop iftop hardinfo inxi neofetch shellcheck curl wget build-essential software-properties-common apt-transport-https ca-certificates gnupg-agent gem bundler python3 python3-dev python3-pip python3-setuptools"
 
     DESKTOP=$(env | grep XDG_CURRENT_DESKTOP)
     if [[ "${DESKTOP,,}" == *"pantheon"* ]] || [[ "${DESKTOP,,}" == *"gnome"* ]]; then
