@@ -21,7 +21,7 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
 
     DESKTOP=$(env | grep XDG_CURRENT_DESKTOP)
     if [[ "${DESKTOP,,}" == *"pantheon"* ]] || [[ "${DESKTOP,,}" == *"gnome"* ]]; then
-        PACKAGES="$PACKAGES gnome-tweaks uim"
+        PACKAGES="$PACKAGES gnome-tweaks im-config uim uim-byeoru"
 
         gsettings set org.gnome.gedit.preferences.encodings candidate-encodings "['UTF-8', 'UHC', 'CURRENT', 'ISO-8859–15', 'EUC-KR', 'UTF-16']"
     fi
@@ -43,6 +43,10 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
     echo "$PACKAGES" | xargs sudo apt install -y
 else
     echo "$PACKAGES" | xargs brew install
+fi
+
+if [[ "$PACKAGES" == *"uim"* ]]; then
+    im-config -n uim
 fi
 
 if [[ "$PACKAGES" == *"zsh"* ]]; then
