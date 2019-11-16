@@ -21,7 +21,7 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
 
     DESKTOP=$(env | grep XDG_CURRENT_DESKTOP)
     if [[ "${DESKTOP,,}" == *"pantheon"* ]] || [[ "${DESKTOP,,}" == *"gnome"* ]]; then
-        PACKAGES="$PACKAGES gnome-tweaks im-config uim uim-byeoru"
+        PACKAGES="$PACKAGES gnome-tweaks im-config uim"
 
         gsettings set org.gnome.gedit.preferences.encodings candidate-encodings "['UTF-8', 'UHC', 'CURRENT', 'ISO-8859–15', 'EUC-KR', 'UTF-16']"
     fi
@@ -63,7 +63,6 @@ fi
 if [[ "$PACKAGES" == *"neovim"* ]]; then
     msg "Install neovim preference..."
     cp -rf nvim ~/.config
-    cp -f vim-colorscheme-hybrid/colors/hybrid.vim ~/.config/nvim/colors
 
     msg "Install vim-plug..."
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
