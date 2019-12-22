@@ -100,6 +100,7 @@ git config --global user.email "secugyu@gmail.com"
 git config --global user.username "awesometic"
 git config --global core.editor "nvim"
 git config --global color.ui "auto"
+git config --global http.postBuffer 524288000
 
 msg "You should set your system up to your liking for finishing."
 msg "Done! Reboot your system to apply changes."
