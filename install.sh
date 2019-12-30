@@ -23,7 +23,7 @@ if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
 
         gsettings set org.gnome.gedit.preferences.encodings candidate-encodings "['UTF-8', 'UHC', 'CURRENT', 'ISO-8859–15', 'EUC-KR', 'UTF-16']"
     elif [[ "${DESKTOP,,}" == *"kde"* ]]; then
-        PACKAGES="zsh neovim tmux iotop iftop hardinfo neofetch shellcheck nodejs npm base-devel uboot-tools ttf-dejavu ibus-hangul xclip noto-fonts-cjk docker libsecret gnome-keyring"
+        PACKAGES="zsh neovim tmux iotop iftop hardinfo neofetch shellcheck nodejs npm base-devel uboot-tools ttf-dejavu ibus-hangul xclip noto-fonts-cjk docker libsecret gnome-keyring twine"
     fi
 
     HOMEDIR="/home/$USER"
