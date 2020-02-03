@@ -16,14 +16,16 @@ if [ "$EUID" -eq 0 ]; then
     exit 0
 fi
 
+# Snap packages
+# normal: chromium vlc discord ao docker
+# --classic: android-studio code slack skype
+
 if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
     DESKTOP=$(env | grep XDG_CURRENT_DESKTOP)
-    if [[ "${DESKTOP,,}" == *"pantheon"* ]] || [[ "${DESKTOP,,}" == *"gnome"* ]]; then
+    if [[ "${DESKTOP,,}" == *"gnome"* ]]; then
     	PACKAGES="zsh neovim tmux git htop iotop iftop hardinfo inxi neofetch shellcheck curl wget build-essential software-properties-common apt-transport-https ca-certificates gnupg-agent gem bundler python3 python3-dev python3-pip python3-setuptools gnome-tweaks imwheel"
 
         gsettings set org.gnome.gedit.preferences.encodings candidate-encodings "['UTF-8', 'UHC', 'CURRENT', 'ISO-8859–15', 'EUC-KR', 'UTF-16']"
-    elif [[ "${DESKTOP,,}" == *"kde"* ]]; then
-        PACKAGES="zsh neovim tmux iotop iftop hardinfo neofetch shellcheck nodejs npm base-devel uboot-tools ttf-dejavu ibus-hangul xclip noto-fonts-cjk docker libsecret gnome-keyring twine swig"
     fi
 
     HOMEDIR="/home/$USER"
@@ -40,10 +42,8 @@ fi
 msg "Install useful packages..."
 
 if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
-    if [[ "${DESKTOP,,}" == *"pantheon"* ]] || [[ "${DESKTOP,,}" == *"gnome"* ]]; then
+    if [[ "${DESKTOP,,}" == *"gnome"* ]]; then
         echo "$PACKAGES" | xargs sudo apt install
-    elif [[ "${DESKTOP,,}" == *"kde"* ]]; then
-        echo "$PACKAGES" | xargs sudo pacman -S
     fi
 else
     echo "$PACKAGES" | xargs brew install
@@ -92,13 +92,6 @@ if [[ "$PACKAGES" == *"imwheel"* ]]; then
     cp -f imwheel/.imwheelrc ~/
     cp -f imwheel/imwheel.desktop ~/.config/autostart/
     imwheel --kill
-fi
-
-if [[ "$PACKAGES" == *"docker"* ]]; then
-    msg "Configure to use 'docker' on Arch Linux..."
-    sudo usermod -aG docker "$USER"
-    sudo systemctl enable docker.service
-    sudo systemctl start docker.service
 fi
 
 msg "Configure global git configuration..."
