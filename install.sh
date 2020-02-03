@@ -19,7 +19,7 @@ fi
 if [[ "$OSTYPE" == *"linux-gnu"* ]]; then
     DESKTOP=$(env | grep XDG_CURRENT_DESKTOP)
     if [[ "${DESKTOP,,}" == *"pantheon"* ]] || [[ "${DESKTOP,,}" == *"gnome"* ]]; then
-    	PACKAGES="zsh neovim tmux git htop iotop iftop hardinfo inxi neofetch shellcheck curl wget build-essential software-properties-common apt-transport-https ca-certificates gnupg-agent gem bundler python3 python3-dev python3-pip python3-setuptools gnome-tweaks"
+    	PACKAGES="zsh neovim tmux git htop iotop iftop hardinfo inxi neofetch shellcheck curl wget build-essential software-properties-common apt-transport-https ca-certificates gnupg-agent gem bundler python3 python3-dev python3-pip python3-setuptools gnome-tweaks imwheel"
 
         gsettings set org.gnome.gedit.preferences.encodings candidate-encodings "['UTF-8', 'UHC', 'CURRENT', 'ISO-8859–15', 'EUC-KR', 'UTF-16']"
     elif [[ "${DESKTOP,,}" == *"kde"* ]]; then
@@ -85,6 +85,13 @@ fi
 if [[ "$PACKAGES" == *"ibus-hangul"* ]]; then
     msg "Configure input method to use 'ibus-hangul'..."
     cp -f ibus/.xprofile ~/
+fi
+
+if [[ "$PACKAGES" == *"imwheel"* ]]; then
+    msg "Configure imwheel to improve mouse scrolling speed..."
+    cp -f imwheel/.imwheelrc ~/
+    cp -f imwheel/imwheel.desktop ~/.config/autostart/
+    imwheel --kill
 fi
 
 if [[ "$PACKAGES" == *"docker"* ]]; then

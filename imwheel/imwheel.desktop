@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Start imwheel to increase mouse wheel speed and to enable side buttons
+Exec=killall imwheel; imwheel -b "4 5"
+Type=Application
+Comment[en_US]=Start imwheel to take effect
+Comment=Start imwheel to take effect
+
