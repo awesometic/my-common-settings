@@ -107,7 +107,7 @@ if [[ "$PACKAGES" == *"imwheel"* ]]; then
 fi
 
 msg "Configure global git configuration..."
-git config --global user.name "Yang Deokgyu"
+git config --global user.name "Deokgyu Yang"
 git config --global user.email "secugyu@gmail.com"
 git config --global user.username "awesometic"
 git config --global core.editor "nvim"
