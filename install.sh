@@ -39,7 +39,7 @@ fi
 if is_ubuntu_gnome; then
     export GDE_NAME=$(env | grep XDG_CURRENT_DESKTOP)
     export HOMEDIR="/home/$USER"
-    export PACKAGES="zsh neovim tmux git htop iotop iftop hardinfo inxi neofetch shellcheck curl wget build-essential software-properties-common apt-transport-https ca-certificates gnupg-agent gem bundler python3 python3-dev python3-pip python3-setuptools gnome-tweaks imwheel"
+    export PACKAGES="zsh neovim tmux git htop iotop iftop hardinfo inxi neofetch shellcheck curl wget build-essential software-properties-common apt-transport-https ca-certificates gnupg-agent gem bundler python3 python3-dev python3-pip python3-setuptools gnome-tweaks imwheel gconf-editor"
     export PACKAGES_SNAP="chromium vlc discord ao"
     export PACKAGES_SNAP_CLASSIC=(android-studio slack skype)
     gsettings set org.gnome.gedit.preferences.encodings candidate-encodings "['UTF-8', 'UHC', 'CURRENT', 'ISO-8859–15', 'EUC-KR', 'UTF-16']"
