@@ -1,4 +1,3 @@
-## ABKO A550 Mouse
 # Speed up scrolling
 ".*"
 None,      Up,   Button4, 3

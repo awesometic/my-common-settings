@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Start imwheel to increase mouse wheel speed and to enable side buttons
-Exec=killall imwheel; imwheel -b "4 5"
+Exec=imwheel -b "4 5"
 X-GNOME-Autostart-enabled=true
 X-GNOME-Autostart-Delay=2
 Type=Application

@@ -2,7 +2,7 @@
 A library for personal favorite settings to set my linux/macOS devices up more easily.<br>
 Base directory for this settings is the home directory of the user who would like to use this library.<br>
 
-This script is designed for Debian/Ubuntu, Elementary OS, macOS.
+This script is designed for `Ubuntu 20.04 LTS` and `macOS 10.15`.
 
 ## Usage
 1. Clone the repository.
