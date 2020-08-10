@@ -67,5 +67,12 @@ if [[ "$PACKAGES" == *"git"* ]]; then
     git config --global http.postBuffer 524288000
 fi
 
+sudo tee -a /etc/ssh/ssh_config > /dev/null <<EOT
+
+Host 192.168.*.*
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
+EOT
+
 msg "You should set your system up to your liking for finishing."
 msg "Done! Reboot your system to apply changes."
