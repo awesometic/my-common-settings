@@ -73,10 +73,13 @@ plugins=(
 	colorize
 	web-search
 	docker
+	vi-mode
 	zsh-syntax-highlighting
 	zsh-autosuggestions
+	zsh-completions
 )
 
+autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
