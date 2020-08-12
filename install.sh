@@ -22,7 +22,7 @@ export HOMEDIR="/home/$USER"
 export PACKAGES="zsh neovim tmux git htop iotop iftop hardinfo inxi neofetch shellcheck curl wget minicom build-essential software-properties-common apt-transport-https ca-certificates gnupg-agent gem bundler python3 python3-dev python3-pip python3-setuptools gnome-keyring ibus-hangul"
 
 msg "Install useful packages..."
-echo "$PACKAGES" | xargs sudo apt install
+echo "$PACKAGES" | xargs sudo apt install -y
 
 if [[ "$PACKAGES" == *"zsh"* ]]; then
     msg "Install shell preference using 'Oh My Zsh'..."
@@ -51,10 +51,6 @@ if [[ "$PACKAGES" == *"tmux"* ]]; then
     cp "$HOMEDIR"/.oh-my-tmux/.tmux.conf.local "$HOMEDIR"/
 
     patch -p0 "$HOMEDIR"/.tmux.conf.local < tmux/tmux.conf.local.patch
-fi
-
-if [[ "$PACKAGES" == *"ibus"* ]]; then
-    cp ibus/.xprofile "$HOMEDIR"/
 fi
 
 if [[ "$PACKAGES" == *"git"* ]]; then

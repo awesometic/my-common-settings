@@ -111,6 +111,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# ibus
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export QT4_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+ibus-daemon -drx
+
+# Snap
+export PATH="$PATH:/snap/bin"
+
 # Use nvim as a default vi tool
 alias vi='nvim'
 alias vim='nvim'
