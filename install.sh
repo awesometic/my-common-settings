@@ -17,11 +17,16 @@ TEXT_BOLD=$(tput bold)
 TEXT_RESET=$(tput sgr0)
 export RUNZSH=no
 export EDITOR=nvim
-
 export HOMEDIR="/home/$USER"
-export PACKAGES="zsh neovim tmux git htop iotop iftop hardinfo inxi neofetch shellcheck curl wget minicom build-essential software-properties-common apt-transport-https ca-certificates gnupg-agent gem bundler python3 python3-dev python3-pip python3-setuptools gnome-keyring ibus-hangul"
+export PACKAGES="zsh neovim tmux git htop iotop iftop hardinfo inxi neofetch shellcheck curl wget minicom build-essential software-properties-common apt-transport-https ca-certificates gnupg-agent gem bundler python3 python3-dev python3-pip python3-setuptools gnome-keyring nimf nimf-libhangul"
+
+msg "Add nimf repository for Korean supports..."
+wget -O - http://apt.hamonikr.org/hamonikr.key | sudo apt-key add -
+sudo bash -c "echo 'deb https://apt.hamonikr.org jin main upstream' > /etc/apt/sources.list.d/hamonikr-jin.list"
+sudo bash -c "echo 'deb-src https://apt.hamonikr.org jin main upstream' >> /etc/apt/sources.list.d/hamonikr-jin.list"
 
 msg "Install useful packages..."
+sudo apt update
 echo "$PACKAGES" | xargs sudo apt install -y
 
 if [[ "$PACKAGES" == *"zsh"* ]]; then
@@ -61,6 +66,10 @@ if [[ "$PACKAGES" == *"git"* ]]; then
     git config --global core.editor "nvim"
     git config --global color.ui "auto"
     git config --global http.postBuffer 524288000
+fi
+
+if [[ "$PACKAGES" == *"nimf"* ]]; then
+    im-config -n nimf
 fi
 
 sudo tee -a /etc/ssh/ssh_config > /dev/null <<EOT
