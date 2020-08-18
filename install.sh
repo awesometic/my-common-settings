@@ -18,12 +18,16 @@ TEXT_RESET=$(tput sgr0)
 export RUNZSH=no
 export EDITOR=nvim
 export HOMEDIR="/home/$USER"
-export PACKAGES="zsh neovim tmux git htop iotop iftop hardinfo inxi neofetch shellcheck curl wget minicom build-essential software-properties-common apt-transport-https ca-certificates gnupg-agent gem bundler python3 python3-dev python3-pip python3-setuptools gnome-keyring nimf nimf-libhangul"
+export PACKAGES="zsh neovim tmux git htop iotop iftop hardinfo inxi neofetch shellcheck curl wget minicom build-essential software-properties-common apt-transport-https ca-certificates gnupg-agent gem bundler python3 python3-dev python3-pip python3-setuptools gnome-keyring nimf nimf-libhangul google-chrome-stable"
 
 msg "Add nimf repository for Korean supports..."
 wget -O - http://apt.hamonikr.org/hamonikr.key | sudo apt-key add -
 sudo bash -c "echo 'deb https://apt.hamonikr.org jin main upstream' > /etc/apt/sources.list.d/hamonikr-jin.list"
 sudo bash -c "echo 'deb-src https://apt.hamonikr.org jin main upstream' >> /etc/apt/sources.list.d/hamonikr-jin.list"
+
+msg "Add Google Chrome repository..."
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
 msg "Install useful packages..."
 sudo apt update
