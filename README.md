@@ -4,7 +4,7 @@ A library for personal favorite settings to set my linux/macOS devices up more e
 
 Base directory for this settings is the home directory of the user who would like to use this library.
 
-This script is designed for `Kubuntu/KDE neon` which are based on **Ubuntu 20.04** and ~~macOS 10.15~~.
+This script is designed for `Kubuntu 20.04` and ~~macOS 10.15~~.
 
 ## Usage
 
@@ -16,7 +16,7 @@ git clone https://github.com/awesometic/my_common_settings.git && cd my_common_s
 
 2. And install preferences by using the `install.sh` script. Keep in mind that you should not execute as root.
 
-- **Kubuntu/KDE neon**
+- **Kubuntu**
 
 ```bash
 ./install.sh
