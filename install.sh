@@ -77,8 +77,6 @@ if [[ "$PACKAGES" == *"nimf"* ]]; then
 fi
 
 sudo tee -a /etc/ssh/ssh_config > /dev/null <<EOT
-
-Host 192.168.*.*
     StrictHostKeyChecking no
     UserKnownHostsFile=/dev/null
 EOT
