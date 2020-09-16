@@ -73,7 +73,6 @@ plugins=(
 	colorize
 	web-search
 	docker
-	vi-mode
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 	zsh-completions
